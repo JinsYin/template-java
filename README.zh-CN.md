@@ -4,7 +4,7 @@
 
 [![Website][website-image]][website-href]
 [![License][license-image]][license-href]
-[![EN doc][en-doc-image]](README.md)
+[![EN doc][en-doc-image]](README.EN.md)
 [![CN doc][cn-doc-image]](README.zh-CN.md)
 
 [![Stargazers][star-image]][star-href]
