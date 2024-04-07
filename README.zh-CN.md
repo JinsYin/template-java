@@ -1,8 +1,8 @@
 # java-template
 
-Java project template with maven.
+采用 Maven 管理的 Java 项目模板。
 
-[![Website][website-image]][website-href] 
+[![Website][website-image]][website-href]
 [![License][license-image]][license-href]
 [![EN doc][en-doc-image]](README.md)
 [![CN doc][cn-doc-image]](README.zh-CN.md)
