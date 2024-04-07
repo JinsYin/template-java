@@ -17,3 +17,19 @@ Java project template with maven.
 [cn-doc-image]: https://img.shields.io/badge/文档-中文-blue.svg?style=socialflat-square
 [star-image]: https://starchart.cc/jinsyin/java-template.svg
 [star-href]: https://starchart.cc/jinsyin/java-template
+
+## Usages
+
+```bash
+git clone git@github.com:JinsYin/java-template.git <project_name>
+cd <project_name>
+rm -rf .git
+# macOS: sed -i '' ...
+sed -i 's|java-template|<project_name>|g' pom.xml
+sed -i 's|java-template|<project_name>|g' README.EN.md
+sed -i 's|java-template|<project_name>|g' README.zh-CN.md
+# set the primary language for the document, e.g. zh-CN
+mv README.zh-CN.md README.md
+sed -i 's|README.zh-CN.md|README.md|g' README.md
+sed -i 's|README.zh-CN.md|README.md|g' README.EN.md
+```
