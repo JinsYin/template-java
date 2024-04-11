@@ -34,14 +34,14 @@
     </scm>
 
     <distributionManagement>
+		<repository>
+			<id>central-releases</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
         <snapshotRepository>
             <id>central-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
-        <repository>
-            <id>central-releases</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
     </distributionManagement>
 
     <properties>
