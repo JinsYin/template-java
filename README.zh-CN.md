@@ -3,16 +3,15 @@
 采用 Maven 管理的 Java 项目模板。
 
 [![Website][website-image]][website-href]
-[![License][license-image]][license-href]
+[![License][license-image]](LICENSE)
 [![EN doc][en-doc-image]](README.EN.md)
 [![CN doc][cn-doc-image]](README.zh-CN.md)
 
 [![Stargazers][star-image]][star-href]
 
-[website-image]: https://img.shields.io/website-up-down-green-red/https/datagov.cn.svg
-[website-href]: https://datagov.cn/
+[website-image]: https://img.shields.io/website-up-down-green-red/https/guruguru.cn.svg
+[website-href]: https://guruguru.cn/
 [license-image]: https://img.shields.io/github/license/jinsyin/java-template
-[license-href]: https://github.com/jinsyin/java-template/blob/master/LICENSE
 [en-doc-image]: https://img.shields.io/badge/Document-English-blue.svg?style=socialflat-square
 [cn-doc-image]: https://img.shields.io/badge/文档-中文-blue.svg?style=socialflat-square
 [star-image]: https://starchart.cc/jinsyin/java-template.svg
@@ -21,20 +20,26 @@
 ## 用法
 
 ```bash
-git clone git@github.com:JinsYin/java-template.git <project_name>
-cd <project_name>
+# 设置项目名称
+export NEW_PROJECT_NAME=<your_project_name>
+
+# 克隆项目
+git clone git@github.com:JinsYin/java-template.git $NEW_PROJECT_NAME
+cd $$NEW_PROJECT_NAME
 rm -rf .git
 
 # 修改项目名称
 # macOS: sed -i '' ...
-sed -i 's|java-template|<project_name>|g' pom.xml
-sed -i 's|java-template|<project_name>|g' README.EN.md
-sed -i 's|java-template|<project_name>|g' README.zh-CN.md
+sed -i "s|java-template|$NEW_PROJECT_NAME|g" pom.xml
+sed -i "s|java-template|$NEW_PROJECT_NAME|g" README.EN.md
+sed -i "s|java-template|$NEW_PROJECT_NAME|g" README.zh-CN.md
 
 # 为项目设置第一语言，假设以中文为第一语言
 mv README.zh-CN.md README.md
 sed -i 's|README.zh-CN.md|README.md|g' README.md
 sed -i 's|README.zh-CN.md|README.md|g' README.EN.md
+
+# 修改 README（可选）
 
 # 通过 jenv 设置 Java 版本（可选），默认版本是 `1.8`
 jenv local 1.8
@@ -44,4 +49,6 @@ mvn -N wrapper:wrapper -Dmaven=3.5.4
 
 # 重新初始化项目
 git init
+git add .
+git cm ":tada: Begin a project"
 ```
