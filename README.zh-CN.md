@@ -24,12 +24,24 @@
 git clone git@github.com:JinsYin/java-template.git <project_name>
 cd <project_name>
 rm -rf .git
+
+# 修改项目名称
 # macOS: sed -i '' ...
 sed -i 's|java-template|<project_name>|g' pom.xml
 sed -i 's|java-template|<project_name>|g' README.EN.md
 sed -i 's|java-template|<project_name>|g' README.zh-CN.md
-# 为项目设置第一语言，以中文为例
+
+# 为项目设置第一语言，假设以中文为第一语言
 mv README.zh-CN.md README.md
 sed -i 's|README.zh-CN.md|README.md|g' README.md
 sed -i 's|README.zh-CN.md|README.md|g' README.EN.md
+
+# 通过 jenv 设置 Java 版本（可选），默认版本是 `1.8`
+jenv local 1.8
+
+# 更新 Maven Wrapper 为指定版本（可选），默认是 `3.5.4`，可能因 Java 版本不同而不同
+mvn -N wrapper:wrapper -Dmaven=3.5.4
+
+# 重新初始化项目
+git init
 ```

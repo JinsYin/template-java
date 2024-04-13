@@ -24,12 +24,24 @@ Java project template with maven.
 git clone git@github.com:JinsYin/java-template.git <project_name>
 cd <project_name>
 rm -rf .git
+
+# update project name
 # macOS: sed -i '' ...
 sed -i 's|java-template|<project_name>|g' pom.xml
 sed -i 's|java-template|<project_name>|g' README.EN.md
 sed -i 's|java-template|<project_name>|g' README.zh-CN.md
+
 # set the primary language for the document, e.g. zh-CN
 mv README.zh-CN.md README.md
 sed -i 's|README.zh-CN.md|README.md|g' README.md
 sed -i 's|README.zh-CN.md|README.md|g' README.EN.md
+
+# update java version (optional)
+jenv local 1.8
+
+# update version of the maven wrapper (optional)
+mvn -N wrapper:wrapper -Dmaven=3.5.4
+
+# init a git project
+git init 
 ```
