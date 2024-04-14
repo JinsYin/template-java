@@ -53,6 +53,20 @@
         <junit.version>4.12</junit.version>
     </properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<!-- Import dependency management from Spring Boot -->
+			<!-- There may be reasons for you not to inherit from the spring-boot-starter-parent POM -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.7.18</version>  <!-- Spring Boot 3.0 requires Java 17 -->
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
     <dependencies>
         <!-- Lombok -->
         <dependency>
@@ -61,17 +75,37 @@
             <version>1.18.2</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Test dependency -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<!-- Spring Boot Web: spring-boot-starter & spring-mvc & spring-boot-starter-tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- Spring Boot Test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
 
     <build>
         <plugins>
+			<!-- Spring Boot Plugin -->
+			<!-- https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.7.18</version>
+				<executions>
+					<execution>
+						<goals>
+							<!-- Repackage existing JAR and WAR archives so that
+							they can be executed from the command line -->
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
             <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
