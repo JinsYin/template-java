@@ -26,6 +26,7 @@ export NEW_PROJECT_NAME=<your_project_name>
 # clone the project
 git clone git@github.com:JinsYin/template-java.git $NEW_PROJECT_NAME
 cd $NEW_PROJECT_NAME
+git checkout springboot
 rm -rf .git
 
 # update project name
