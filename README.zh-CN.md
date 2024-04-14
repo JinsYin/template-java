@@ -1,6 +1,6 @@
-# template-java
+# Java Template for Spring Boot
 
-采用 Maven 管理的 Java 项目模板。
+Spring Boot 脚手架。
 
 [![Website][website-image]][website-href]
 [![License][license-image]](LICENSE)
@@ -51,4 +51,19 @@ mvn -N wrapper:wrapper -Dmaven=3.5.4
 git init
 git add .
 git cm ":tada: Begin a project"
+```
+
+## 开发
+
+1. 启动服务：`./mvnw spring-boot:run` 或者开发工具启动
+2. 验证服务：`curl http:/localhost:8080/greet/hello?person=Tom`
+
+## 部署
+
+```bash
+# 打包
+$ ./mvnw clean package
+
+# 启动
+$ java -jar target/java-template-0.0.1-SNAPSHOT.jar
 ```

@@ -1,6 +1,6 @@
-# template-java
+# Java Template for Spring Boot
 
-Java project template with maven.
+Sprint Boot scaffold.
 
 [![Website][website-image]][website-href] 
 [![License][license-image]](LICENSE)
