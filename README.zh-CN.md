@@ -26,6 +26,7 @@ export NEW_PROJECT_NAME=<your_project_name>
 # 克隆项目
 git clone git@github.com:JinsYin/template-java.git $NEW_PROJECT_NAME
 cd $$NEW_PROJECT_NAME
+git checkout springboot
 rm -rf .git
 
 # 修改项目名称
@@ -41,10 +42,17 @@ sed -i 's|README.zh-CN.md|README.md|g' README.EN.md
 
 # 修改 README（可选）
 
-# 通过 jenv 设置 Java 版本（可选），默认版本是 `1.8`
+# 修改包路径
+mv src/main/java/cn/guruguru/javatemplate/ src/main/java/cn/guruguru/javatemplate/<packagename>
+mv src/test/java/cn/guruguru/javatemplate/ src/test/java/cn/guruguru/javatemplate/<packagename>
+
+# 修改应用配置
+sed -i "s|java-template|$NEW_PROJECT_NAME|g" src/main/resources/application.properties
+
+#（可选）通过 jenv 设置 Java 版本，默认版本是 `1.8`
 jenv local 1.8
 
-# 更新 Maven Wrapper 为指定版本（可选），默认是 `3.5.4`，可能因 Java 版本不同而不同
+#（可选）更新 Maven Wrapper 为指定版本，默认是 `3.5.4`，可能因 Java 版本不同而不同
 mvn -N wrapper:wrapper -Dmaven=3.5.4
 
 # 重新初始化项目
