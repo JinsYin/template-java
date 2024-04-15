@@ -50,7 +50,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.2</lombok.version>
-        <junit.version>4.12</junit.version>
+        <springboot.version>2.7.18</springboot.version>
+		<mybatisplus.version>3.5.6</mybatisplus.version>
     </properties>
 
 	<dependencyManagement>
@@ -60,7 +61,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>2.7.18</version>  <!-- Spring Boot 3.0 requires Java 17 -->
+				<version>${springboot.version}</version>  <!-- Spring Boot 3.0 requires Java 17 -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -72,7 +73,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
 		<!-- Spring Boot Web: spring-boot-starter & spring-mvc & spring-boot-starter-tomcat -->
@@ -86,6 +87,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Mybatis Plus -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${mybatisplus.version}</version> <!-- SpringBoot3: mybatis-plus-spring-boot3-starter -->
+		</dependency>
     </dependencies>
 
     <build>
@@ -95,7 +102,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.7.18</version>
+				<version>${springboot.version}</version>
 				<executions>
 					<execution>
 						<goals>
