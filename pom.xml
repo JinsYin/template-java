@@ -196,4 +196,32 @@
             </plugin>
         </plugins>
     </build>
+
+	<profiles>
+		<!-- [API Doc] Smart-Doc + Torna -->
+		<!-- https://smart-doc-group.github.io/#/start/quickstart?id=minimize-configuration -->
+		<profile>
+			<id>Smart-Doc</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.ly.smart-doc</groupId>
+						<artifactId>smart-doc-maven-plugin</artifactId>
+						<version>3.0.3</version>
+						<configuration>
+							<configFile>${basedir}/src/main/resources/smart-doc.json</configFile>
+							<projectName>template-java</projectName>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>html</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
