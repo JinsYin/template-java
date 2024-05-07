@@ -1,0 +1,33 @@
+server.port: 8080
+
+spring:
+  application.name: template
+  h2.console.enabled: true # http://localhost:<port>/h2-console
+  datasource:
+    # H2 Data Source: https://www.baeldung.com/spring-boot-h2-database
+    url: jdbc:h2:file:./.h2/template # jdbc:h2:mem:template
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+  sql:
+    init:
+      # data-locations: classpath:sql/h2/data.sql
+      schema-locations: classpath:sql/h2/init.sql
+
+# http://<ip>:<port>/doc.html
+knife4j:
+  enable: true
+  openapi:
+    title: Template
+    description: "Java Template for Spring Boot"
+    email: jinsyin@163.com
+    concat: JinsYin
+    url: https://guruguru.cn
+    version: v1.0
+    license: Apache 2.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - cn.guruguru.javatemplate.controller
