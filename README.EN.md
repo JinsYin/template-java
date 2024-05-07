@@ -1,4 +1,4 @@
-# java-template
+# template-java
 
 Java project template with maven.
 
@@ -11,11 +11,11 @@ Java project template with maven.
 
 [website-image]: https://img.shields.io/website-up-down-green-red/https/guruguru.cn.svg
 [website-href]: https://guruguru.cn/
-[license-image]: https://img.shields.io/github/license/jinsyin/java-template
+[license-image]: https://img.shields.io/github/license/jinsyin/template-java
 [en-doc-image]: https://img.shields.io/badge/Document-English-blue.svg?style=socialflat-square
 [cn-doc-image]: https://img.shields.io/badge/文档-中文-blue.svg?style=socialflat-square
-[star-image]: https://starchart.cc/jinsyin/java-template.svg
-[star-href]: https://starchart.cc/jinsyin/java-template
+[star-image]: https://starchart.cc/jinsyin/template-java.svg
+[star-href]: https://starchart.cc/jinsyin/template-java
 
 ## Usages
 
@@ -24,15 +24,15 @@ Java project template with maven.
 export NEW_PROJECT_NAME=<your_project_name>
 
 # clone the project
-git clone git@github.com:JinsYin/java-template.git $NEW_PROJECT_NAME
+git clone git@github.com:JinsYin/template-java.git $NEW_PROJECT_NAME
 cd $NEW_PROJECT_NAME
 rm -rf .git
 
 # update project name
 # macOS: sed -i '' ...
-sed -i "s|java-template|$NEW_PROJECT_NAME|g" pom.xml
-sed -i "s|java-template|$NEW_PROJECT_NAME|g" README.EN.md
-sed -i "s|java-template|$NEW_PROJECT_NAME|g" README.zh-CN.md
+sed -i "s|template-java|$NEW_PROJECT_NAME|g" pom.xml
+sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.EN.md
+sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.zh-CN.md
 
 # set the primary language for the document, e.g. EN
 mv README.EN.md README.md

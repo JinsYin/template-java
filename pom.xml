@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.guruguru</groupId> <!-- or: io.github.jinsyin -->
-    <artifactId>java-template</artifactId>
+    <artifactId>template-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>java-template</name>
-    <description>java-template</description>
-    <url>https://github.com/jinsyin/java-template</url>
+    <name>template-java</name>
+    <description>template-java</description>
+    <url>https://github.com/jinsyin/template-java</url>
 
     <licenses>
         <license>
@@ -28,9 +28,9 @@
     </developers>
 
     <scm>
-        <url>https://github.com/jinsyin/java-template</url>
-        <connection>scm:git:git://github.com/jinsyin/java-template.git</connection>
-        <developerConnection>scm:git:ssh://github.com:jinsyin/java-template.git</developerConnection>
+        <url>https://github.com/jinsyin/template-java</url>
+        <connection>scm:git:git://github.com/jinsyin/template-java.git</connection>
+        <developerConnection>scm:git:ssh://github.com:jinsyin/template-java.git</developerConnection>
     </scm>
 
     <distributionManagement>
