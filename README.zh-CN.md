@@ -47,7 +47,7 @@ mv src/main/java/cn/guruguru/javatemplate/ src/main/java/cn/guruguru/javatemplat
 mv src/test/java/cn/guruguru/javatemplate/ src/test/java/cn/guruguru/javatemplate/<packagename>
 
 # 修改应用配置
-sed -i "s|java-template|$NEW_PROJECT_NAME|g" src/main/resources/application.properties
+sed -i "s|java-template|$NEW_PROJECT_NAME|g" src/main/resources/application.yaml
 
 #（可选）通过 jenv 设置 Java 版本，默认版本是 `1.8`
 jenv local 1.8

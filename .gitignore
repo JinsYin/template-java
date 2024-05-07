@@ -48,3 +48,9 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+# Smart-doc
+doc/
+
+# H2 data directory
+.h2/
