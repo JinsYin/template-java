@@ -1,4 +1,4 @@
-package cn.guruguru.template.common.model.response.code;
+package cn.guruguru.template.base.model.response.code;
 
 /**
  * Copied from {@code CodeI}

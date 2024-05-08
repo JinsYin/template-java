@@ -1,9 +1,9 @@
-package cn.guruguru.template.common.model.response;
+package cn.guruguru.template.base.model.response;
 
 
-import cn.guruguru.template.common.model.pagination.PaginationResult;
-import cn.guruguru.template.common.model.response.code.ICode;
-import cn.guruguru.template.common.model.response.code.RCode;
+import cn.guruguru.template.base.model.pagination.PaginationResult;
+import cn.guruguru.template.base.model.response.code.ICode;
+import cn.guruguru.template.base.model.response.code.RCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

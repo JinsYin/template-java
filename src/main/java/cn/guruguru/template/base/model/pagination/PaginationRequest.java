@@ -1,4 +1,4 @@
-package cn.guruguru.template.common.model.pagination;
+package cn.guruguru.template.base.model.pagination;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.AllArgsConstructor;

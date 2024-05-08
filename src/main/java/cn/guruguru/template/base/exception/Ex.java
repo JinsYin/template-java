@@ -1,7 +1,7 @@
-package cn.guruguru.template.common.exception;
+package cn.guruguru.template.base.exception;
 
 
-import cn.guruguru.template.common.model.response.code.ICode;
+import cn.guruguru.template.base.model.response.code.ICode;
 import lombok.Getter;
 
 /**

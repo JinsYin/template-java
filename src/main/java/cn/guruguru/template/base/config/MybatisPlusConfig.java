@@ -1,4 +1,4 @@
-package cn.guruguru.template.common.config;
+package cn.guruguru.template.base.config;
 
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
