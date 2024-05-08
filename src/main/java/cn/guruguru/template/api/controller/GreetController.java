@@ -1,4 +1,4 @@
-package cn.guruguru.template.controller;
+package cn.guruguru.template.api.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
