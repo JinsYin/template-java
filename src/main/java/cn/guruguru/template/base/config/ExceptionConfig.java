@@ -1,9 +1,9 @@
-package cn.guruguru.template.common.config;
+package cn.guruguru.template.base.config;
 
 
-import cn.guruguru.template.common.exception.Ex;
-import cn.guruguru.template.common.model.response.Rs;
-import cn.guruguru.template.common.model.response.code.RCode;
+import cn.guruguru.template.base.exception.Ex;
+import cn.guruguru.template.base.model.response.Rs;
+import cn.guruguru.template.base.model.response.code.RCode;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.util.validation.ValidationException;

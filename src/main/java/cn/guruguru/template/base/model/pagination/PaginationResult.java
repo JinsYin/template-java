@@ -1,4 +1,4 @@
-package cn.guruguru.template.common.model.pagination;
+package cn.guruguru.template.base.model.pagination;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
