@@ -30,4 +30,4 @@ knife4j:
         group-name: default
         api-rule: package
         api-rule-resources:
-          - cn.guruguru.javatemplate.controller
+          - cn.guruguru.template.api.controller
