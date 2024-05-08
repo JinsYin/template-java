@@ -1,4 +1,4 @@
-package cn.guruguru.javatemplate;
+package cn.guruguru.template;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
