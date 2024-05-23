@@ -1,13 +1,16 @@
-package cn.guruguru.template.base.config;
+package cn.guruguru.template.dao.config;
 
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-// @MapperScan("...")
-public class MybatisPlusConfig {
+@EnableTransactionManagement
+@MapperScan({ "cn.guruguru.template.dao.mapper" })
+public class MybatisPlusConfig { // DaoConfig
 
     /**
      * Mybatis-Plus plugins
