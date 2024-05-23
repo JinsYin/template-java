@@ -5,7 +5,7 @@ import cn.guruguru.template.base.model.response.code.ICode;
 import lombok.Getter;
 
 /**
- * General response exception. Inspired by {@code BizException} and {@code BusinessException}
+ * General response exception
  */
 @Getter
 public class Ex extends RuntimeException {
