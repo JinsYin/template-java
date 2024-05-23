@@ -52,6 +52,8 @@
         <lombok.version>1.18.2</lombok.version>
         <springboot.version>2.7.18</springboot.version> <!-- The highest version supported by Java 8-->
 		<mybatisplus.version>3.5.6</mybatisplus.version>
+		<pagehelper.springboot.version>1.4.2</pagehelper.springboot.version>
+		<druid.version>1.2.6</druid.version>
     </properties>
 
 	<dependencyManagement>
@@ -76,7 +78,9 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-		<!-- Spring Boot Web: spring-boot-starter & spring-mvc & spring-boot-starter-tomcat -->
+
+		<!-- Spring Boot Web -->
+		<!-- include: spring-boot-starter & spring-mvc & jackson & spring-boot-starter-tomcat -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -92,11 +96,26 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- Mybatis Plus -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
 			<version>${mybatisplus.version}</version> <!-- SpringBoot3: mybatis-plus-spring-boot3-starter -->
+		</dependency>
+		<!-- Pagehelper for Mybatis Plus -->
+		<!-- https://github.com/pagehelper/pagehelper-spring-boot -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper.springboot.version}</version>
+		</dependency>
+
+		<!-- Alibaba Druid Connection Pool -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${druid.version}</version>
 		</dependency>
 		<!-- H2 Database -->
 		<dependency>
