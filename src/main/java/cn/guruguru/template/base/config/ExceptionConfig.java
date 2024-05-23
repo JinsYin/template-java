@@ -34,7 +34,6 @@ import java.util.stream.Collectors;
  *
  * @see <a href="https://stackoverflow.com/questions/60492383/how-to-create-spring-bean-of-type-restcontrolleradvice-in-spring-configuration">How to create spring @bean of type RestControllerAdvice in spring configuration class</a>
  */
-//
 @Configuration
 public class ExceptionConfig {
 

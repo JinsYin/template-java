@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.guruguru.template.base.config.CorsConfig,\
+  cn.guruguru.template.base.config.ExceptionConfig,\
+  cn.guruguru.template.base.config.HttpClientConfig,\
+  cn.guruguru.template.dao.config.MybatisPlusConfig

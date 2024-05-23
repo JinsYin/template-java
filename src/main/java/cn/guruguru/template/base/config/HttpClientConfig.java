@@ -1,5 +1,6 @@
 package cn.guruguru.template.base.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,6 +12,7 @@ public class HttpClientConfig {
      *
      * @return a {@link RestTemplate} client
      */
+    @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
