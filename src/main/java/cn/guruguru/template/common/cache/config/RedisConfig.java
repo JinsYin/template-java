@@ -1,8 +1,9 @@
-package cn.guruguru.template.bean.config;
+package cn.guruguru.template.common.cache.config;
 
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableCaching
 @EnableTransactionManagement
 @AutoConfigureBefore(RedisAutoConfiguration.class)
+@ComponentScan(basePackages = { "cn.guruguru.template.common.cache.service" })
 public class RedisConfig {
 //    @Bean
 //    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory redisConnectionFactory) {

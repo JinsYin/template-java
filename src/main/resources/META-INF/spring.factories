@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.guruguru.template.common.cache.config.RedisConfig, \
   cn.guruguru.template.common.core.config.CorsConfig,\
   cn.guruguru.template.common.core.config.ExceptionConfig,\
   cn.guruguru.template.common.core.config.HttpClientConfig,\

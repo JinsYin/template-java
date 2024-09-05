@@ -1,4 +1,4 @@
-package cn.guruguru.template.bean.service;
+package cn.guruguru.template.common.cache.service;
 
 import org.springframework.stereotype.Service;
 
