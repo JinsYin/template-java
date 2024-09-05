@@ -1,4 +1,4 @@
-package cn.guruguru.template.base.config;
+package cn.guruguru.template.common.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
