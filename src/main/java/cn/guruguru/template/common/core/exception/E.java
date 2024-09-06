@@ -7,7 +7,7 @@ import lombok.Getter;
  * General response exception
  */
 @Getter
-public class Ex extends RuntimeException {
+public class E extends RuntimeException {
 
     private static final long serialVersionUID = 7840341868603278283L;
 
@@ -16,13 +16,13 @@ public class Ex extends RuntimeException {
 
     // ~ constructors --------------------
 
-    public Ex(ICode iCode) {
+    public E(ICode iCode) {
         super(iCode.getMessage());
         this.code = iCode.getCode();
         this.message = iCode.getMessage();
     }
 
-    public Ex(ICode iCode, String overrideMessage) {
+    public E(ICode iCode, String overrideMessage) {
         super(overrideMessage);
         this.code = iCode.getCode();
         this.message = overrideMessage;

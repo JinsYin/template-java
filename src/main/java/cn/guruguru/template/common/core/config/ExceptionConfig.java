@@ -1,6 +1,6 @@
 package cn.guruguru.template.common.core.config;
 
-import cn.guruguru.template.common.core.exception.Ex;
+import cn.guruguru.template.common.core.exception.E;
 import cn.guruguru.template.common.core.model.response.R;
 import cn.guruguru.template.common.core.model.response.code.RCode;
 import io.swagger.annotations.ApiOperation;
@@ -189,17 +189,17 @@ public class ExceptionConfig {
         /**
          * 处理通用的响应异常
          *
-         * @param ex a {@link Ex}
+         * @param e a {@link E}
          * @param response response
          * @return a {@link R}
          */
-        @ExceptionHandler(value = Ex.class)
-        public R<Object> handleRespException(Ex ex, HttpServletResponse response) {
+        @ExceptionHandler(value = E.class)
+        public R<Object> handleRespException(E e, HttpServletResponse response) {
             log.trace("Caused a RespException.");
-            if (ex.getCode() <= HttpStatus.NETWORK_AUTHENTICATION_REQUIRED.value()) {
-                response.setStatus(ex.getCode());
+            if (e.getCode() <= HttpStatus.NETWORK_AUTHENTICATION_REQUIRED.value()) {
+                response.setStatus(e.getCode());
             }
-            return R.exception(ex.getCode(), ex.getMessage());
+            return R.exception(e.getCode(), e.getMessage());
         }
 
         /**
