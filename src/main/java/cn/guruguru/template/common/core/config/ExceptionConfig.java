@@ -1,7 +1,7 @@
 package cn.guruguru.template.common.core.config;
 
 import cn.guruguru.template.common.core.exception.Ex;
-import cn.guruguru.template.common.core.model.response.Rs;
+import cn.guruguru.template.common.core.model.response.R;
 import cn.guruguru.template.common.core.model.response.code.RCode;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -47,11 +47,11 @@ public class ExceptionConfig {
          * 处理 {@code @RequestParam} 和 {@code @PathVariable} 注解的基本类型参数的验证异常
          *
          * @param ex a {@link ConstraintViolationException}
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public Rs<Object> handleConstraintViolationException(ConstraintViolationException ex) {
+        public R<Object> handleConstraintViolationException(ConstraintViolationException ex) {
             log.trace("Caused a ConstraintViolationException.");
             String message =
                     ex.getConstraintViolations().stream()
@@ -61,7 +61,7 @@ public class ExceptionConfig {
                                                     + ": "
                                                     + v.getMessage())
                             .collect(Collectors.joining("; "));
-            return Rs.exception(RCode.CODE400, message);
+            return R.exception(RCode.CODE400, message);
         }
 
         /**
@@ -70,77 +70,77 @@ public class ExceptionConfig {
          * <p>示例：{@code method(@Valid UserDto userDto)}
          *
          * @param ex BindException
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = BindException.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public Rs<Object> handleBindException(BindException ex) {
+        public R<Object> handleBindException(BindException ex) {
             log.trace("Caused a BindException.");
             String message =
                     ex.getBindingResult().getFieldErrors().stream()
                             .map(err -> err.getField() + ": " + err.getDefaultMessage())
                             .collect(Collectors.joining("; "));
-            return Rs.exception(RCode.CODE400, message);
+            return R.exception(RCode.CODE400, message);
         }
 
         /**
          * 处理 {@code @RequestBody} 注解的方法参数的验证异常
          *
          * @param ex MethodArgumentNotValidException
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public Rs<Object> handleMethodArgumentNotValidException(
+        public R<Object> handleMethodArgumentNotValidException(
                 MethodArgumentNotValidException ex) {
             String message =
                     ex.getBindingResult().getFieldErrors().stream()
                             .map(err -> err.getField() + ": " + err.getDefaultMessage())
                             .collect(Collectors.joining("; "));
-            return Rs.exception(RCode.CODE400, message);
+            return R.exception(RCode.CODE400, message);
         }
 
         /**
          * 处理客户端请求错误，如 JSON 格式错误
          *
          * @param ex HttpMessageNotReadableException
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = HttpMessageNotReadableException.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public Rs<Object> handleHttpMessageNotReadableException(
+        public R<Object> handleHttpMessageNotReadableException(
                 HttpMessageNotReadableException ex) {
             log.trace("Caused a HttpMessageNotReadableException.");
             String message = RCode.CODE400.getMessage() + ": " + ex.getMessage();
-            return Rs.exception(RCode.CODE400, message);
+            return R.exception(RCode.CODE400, message);
         }
 
         /**
          * 处理 {@code @RequestParam(required = true)} 造成字段参数不存在的异常
          *
          * @param ex MissingServletRequestParameterException
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = MissingServletRequestParameterException.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public Rs<Object> handleMissingServletRequestParameterException(
+        public R<Object> handleMissingServletRequestParameterException(
                 MissingServletRequestParameterException ex) {
             log.trace("Caused a MissingServletRequestParameterException.");
             String message = RCode.CODE400.getMessage() + ": " + ex.getMessage();
-            return Rs.exception(RCode.CODE400, message);
+            return R.exception(RCode.CODE400, message);
         }
 
         /**
          * 处理验证异常
          *
          * @param ex ValidationException
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = ValidationException.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public Rs<Object> handleValidationException(ValidationException ex) {
+        public R<Object> handleValidationException(ValidationException ex) {
             String message = RCode.VALIDATOR_ERROR.getMessage() + ": " + ex.getMessage();
-            return Rs.exception(RCode.VALIDATOR_ERROR, message);
+            return R.exception(RCode.VALIDATOR_ERROR, message);
         }
 
         /**
@@ -158,13 +158,13 @@ public class ExceptionConfig {
          * </ul>
          *
          * @param ex a {@link EmptyResultDataAccessException}
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = EmptyResultDataAccessException.class)
         @ResponseStatus(HttpStatus.NOT_FOUND)
-        public Rs<Object> handleEmptyResultDataAccessException(
+        public R<Object> handleEmptyResultDataAccessException(
                 EmptyResultDataAccessException ex) {
-            return Rs.exception(RCode.NON_EXISTENT);
+            return R.exception(RCode.NON_EXISTENT);
         }
 
         /**
@@ -176,14 +176,14 @@ public class ExceptionConfig {
          * 或 false（包括不填），都将抛出该异常
          *
          * @param ex a {@link MethodArgumentTypeMismatchException}
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(MethodArgumentTypeMismatchException.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public final Rs<Object> handleMethodArgumentTypeMismatchException(
+        public final R<Object> handleMethodArgumentTypeMismatchException(
                 MethodArgumentTypeMismatchException ex) {
             log.trace("Caused a MethodArgumentTypeMismatchException.");
-            return Rs.exception(RCode.ROUTE_FORMAT_ERROR);
+            return R.exception(RCode.ROUTE_FORMAT_ERROR);
         }
 
         /**
@@ -191,15 +191,15 @@ public class ExceptionConfig {
          *
          * @param ex a {@link Ex}
          * @param response response
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = Ex.class)
-        public Rs<Object> handleRespException(Ex ex, HttpServletResponse response) {
+        public R<Object> handleRespException(Ex ex, HttpServletResponse response) {
             log.trace("Caused a RespException.");
             if (ex.getCode() <= HttpStatus.NETWORK_AUTHENTICATION_REQUIRED.value()) {
                 response.setStatus(ex.getCode());
             }
-            return Rs.exception(ex.getCode(), ex.getMessage());
+            return R.exception(ex.getCode(), ex.getMessage());
         }
 
         /**
@@ -207,11 +207,11 @@ public class ExceptionConfig {
          *
          * @param err Exception
          * @param handlerMethod a {@link HandlerMethod}
-         * @return a {@link Rs}
+         * @return a {@link R}
          */
         @ExceptionHandler(value = Exception.class)
         @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-        public Rs<Object> handleUncaughtException(
+        public R<Object> handleUncaughtException(
                 Exception err, HandlerMethod handlerMethod) {
             log.error(err.getMessage(), err);
             ApiOperation apiOperationAnnotation =
@@ -220,11 +220,11 @@ public class ExceptionConfig {
                 String annotationValue = apiOperationAnnotation.value();
                 if (annotationValue != null && !annotationValue.isEmpty()) {
                     String message = annotationValue + "错误";
-                    return Rs.error(message);
+                    return R.error(message);
                 }
             }
             String message = RCode.CODE500.getMessage();
-            return Rs.error(message);
+            return R.error(message);
         }
 
         // ~ utilities -----------------------------------
