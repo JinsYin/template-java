@@ -6,7 +6,6 @@ import cn.guruguru.template.common.core.model.response.Rs;
 import cn.guruguru.template.common.core.model.response.code.RCode;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jsqlparser.util.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +25,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
 
 import java.util.stream.Collectors;
 
