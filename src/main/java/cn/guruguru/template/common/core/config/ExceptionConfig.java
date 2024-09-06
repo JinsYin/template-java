@@ -1,7 +1,7 @@
 package cn.guruguru.template.common.core.config;
 
 import cn.guruguru.template.common.core.exception.E;
-import cn.guruguru.template.common.core.model.response.R;
+import cn.guruguru.template.common.core.model.response.body.R;
 import cn.guruguru.template.common.core.model.response.code.RCode;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

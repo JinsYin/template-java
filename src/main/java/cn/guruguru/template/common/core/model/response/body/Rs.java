@@ -1,4 +1,4 @@
-package cn.guruguru.template.common.core.model.response;
+package cn.guruguru.template.common.core.model.response.body;
 
 import cn.guruguru.template.common.core.model.pagination.PaginationResult;
 import cn.guruguru.template.common.core.model.response.code.ICode;
