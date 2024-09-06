@@ -1,6 +1,5 @@
 package cn.guruguru.template.common.core.model.pagination;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -31,15 +30,5 @@ public class PaginationRequest {
      */
     public static PaginationRequest of(Integer pageNo, Integer pageSize, String keyword) {
         return new PaginationRequest(pageNo, pageSize, keyword);
-    }
-
-    /**
-     * 获取 Mybatis Plus 分页对象
-     *
-     * @param <T> class
-     * @return a Mybatis-Plus {@link Page}
-     */
-    public <T> Page<T> getPage() {
-        return Page.of(pageNo, pageSize);
     }
 }
