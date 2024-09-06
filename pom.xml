@@ -232,7 +232,7 @@
 		<!-- [API Doc]: Knife4j OpenAPI2 Specification -->
 		<!-- github.com/xiaoymin/knife4j -->
 		<profile>
-			<id>Knife4j-OpenAPI2</id>
+			<id>apidoc:knife4j-openapi2</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
@@ -248,7 +248,7 @@
 		<!-- [API Doc] Smart-Doc + Torna -->
 		<!-- https://smart-doc-group.github.io/#/start/quickstart?id=minimize-configuration -->
 		<profile>
-			<id>Smart-Doc</id>
+			<id>apidoc:smartdoc</id>
 			<build>
 				<plugins>
 					<plugin>
