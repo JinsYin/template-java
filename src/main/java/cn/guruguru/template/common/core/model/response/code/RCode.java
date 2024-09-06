@@ -1,6 +1,5 @@
 package cn.guruguru.template.common.core.model.response.code;
 
-
 import lombok.Getter;
 
 /**

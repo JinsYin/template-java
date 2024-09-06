@@ -1,6 +1,5 @@
 package cn.guruguru.template.common.core.model.response;
 
-
 import cn.guruguru.template.common.core.model.pagination.PaginationResult;
 import cn.guruguru.template.common.core.model.response.code.ICode;
 import cn.guruguru.template.common.core.model.response.code.RCode;

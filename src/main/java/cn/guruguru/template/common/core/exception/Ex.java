@@ -1,6 +1,5 @@
 package cn.guruguru.template.common.core.exception;
 
-
 import cn.guruguru.template.common.core.model.response.code.ICode;
 import lombok.Getter;
 

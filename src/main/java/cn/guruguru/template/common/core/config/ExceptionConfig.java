@@ -1,6 +1,5 @@
 package cn.guruguru.template.common.core.config;
 
-
 import cn.guruguru.template.common.core.exception.Ex;
 import cn.guruguru.template.common.core.model.response.Rs;
 import cn.guruguru.template.common.core.model.response.code.RCode;
