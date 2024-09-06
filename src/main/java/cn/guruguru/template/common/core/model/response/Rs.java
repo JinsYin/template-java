@@ -21,7 +21,7 @@ import java.util.Collection;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rz<T> implements Serializable {
+public class Rs<T> implements Serializable {
 
     private static final long serialVersionUID = -2733521975979569235L;
 
@@ -36,24 +36,24 @@ public class Rz<T> implements Serializable {
 
     // ~ static methods ------------------
 
-    public static <T> Rz<T> ok(PaginationResult<T> data) {
-        return Rz.<T>builder()
+    public static <T> Rs<T> ok(PaginationResult<T> data) {
+        return Rs.<T>builder()
                 .withCode(RCode.CODE200)
                 .withTotal(data.getTotal())
                 .withData(data.getCollection())
                 .build();
     }
 
-    public static <T> Rz<T> ok(Number total, Collection<T> data) {
-        return Rz.<T>builder()
+    public static <T> Rs<T> ok(Number total, Collection<T> data) {
+        return Rs.<T>builder()
                 .withCode(RCode.CODE200)
                 .withTotal(total)
                 .withData(data)
                 .build();
     }
 
-    public static <T> Rz<T> of(Integer code, Long total, Collection<T> data) {
-        return Rz.<T>builder().withCode(code).withTotal(total).withData(data).build();
+    public static <T> Rs<T> of(Integer code, Long total, Collection<T> data) {
+        return Rs.<T>builder().withCode(code).withTotal(total).withData(data).build();
     }
 
     // ~ builder -------------------------
@@ -87,8 +87,8 @@ public class Rz<T> implements Serializable {
             return this;
         }
 
-        public Rz<T> build() {
-            return new Rz<>(code, total, data);
+        public Rs<T> build() {
+            return new Rs<>(code, total, data);
         }
     }
 }
