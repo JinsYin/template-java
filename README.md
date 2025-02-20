@@ -5,7 +5,7 @@
 [![Website][website-image]][website-href]
 [![License][license-image]](LICENSE)
 [![EN doc][en-doc-image]](README.EN.md)
-[![CN doc][cn-doc-image]](README.zh-CN.md)
+[![CN doc][cn-doc-image]](README)
 
 [![Stargazers][star-image]][star-href]
 
@@ -32,17 +32,10 @@ rm -rf .git
 # macOS: sed -i '' ...
 sed -i "s|template-java|$NEW_PROJECT_NAME|g" pom.xml
 sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.EN.md
-sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.zh-CN.md
+sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.md
 
-# 为项目设置第一语言，假设以中文为第一语言
-mv README.zh-CN.md README.md
-sed -i 's|README.zh-CN.md|README.md|g' README.md
-sed -i 's|README.zh-CN.md|README.md|g' README.EN.md
-
-# 修改 README（可选）
-
-# 通过 jenv 设置 Java 版本（可选），默认版本是 `1.8`
-jenv local 1.8
+# 切换 Java 版本为 `1.8`
+sdk use java 1.8
 
 # 更新 Maven Wrapper 为指定版本（可选），默认是 `3.5.4`，可能因 Java 版本不同而不同
 mvn -N wrapper:wrapper -Dmaven=3.5.4

@@ -5,7 +5,7 @@ Java project template with maven.
 [![Website][website-image]][website-href] 
 [![License][license-image]](LICENSE)
 [![EN doc][en-doc-image]](README.EN.md)
-[![CN doc][cn-doc-image]](README.zh-CN.md)
+[![CN doc][cn-doc-image]](README)
 
 [![Stargazers][star-image]][star-href]
 
@@ -32,17 +32,10 @@ rm -rf .git
 # macOS: sed -i '' ...
 sed -i "s|template-java|$NEW_PROJECT_NAME|g" pom.xml
 sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.EN.md
-sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.zh-CN.md
-
-# set the primary language for the document, e.g. EN
-mv README.EN.md README.md
-sed -i 's|README.EN.md|README.md|g' README.md
-sed -i 's|README.EN.md|README.md|g' README.zh-CN.md
-
-# update the README
+sed -i "s|template-java|$NEW_PROJECT_NAME|g" README.md
 
 # update java version (optional)
-jenv local 1.8
+sdk use java 1.8
 
 # update version of the maven wrapper (optional)
 mvn -N wrapper:wrapper -Dmaven=3.5.4

@@ -45,7 +45,6 @@
     </distributionManagement>
 
     <properties>
-		<!-- TODO: change it as needed -->
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
